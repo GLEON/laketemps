@@ -1,6 +1,8 @@
 # History files
 .Rhistory
-
+*.DS_Store
+*.Rbuildignore
+laketemps.Rproj
 # Example code in package build process
 *-Ex.R
 
@@ -9,3 +11,4 @@
 
 # RStudio files
 .Rproj.user/
+.Rproj.user
