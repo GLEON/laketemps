@@ -2,8 +2,11 @@
 #'@param lake_name a valid name of a lake in the GLTC database
 #'@param type source for the data. Either "in_situ" or "satellite".
 #'@return a lake data.frame, or NULL if no data exist
+#'@examples
+#'get_surface_temps('Victoria','satellite')
+#'get_surface_temps('Mendota','in_situ')
 #'@export
-get_surface_temps <- function(lake_name, type = 'in_situ'){
+get_surface_temps <- function(lake_name, type){
   
   if (!type %in% c('satellite','in_situ')){stop(paste0('type=', type, ' not recognized'))}
   data(gltc_temperature)

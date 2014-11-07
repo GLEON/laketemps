@@ -3,12 +3,15 @@
 \alias{get_lake_names}
 \title{get lake names in GLTC dataset}
 \usage{
-get_lake_names()
+get_lake_names(lines, delim, row_names)
 }
 \value{
 a character vector of valid lake names
 }
 \description{
 get lake names in GLTC dataset
+}
+\examples{
+get_lake_names()
 }
 

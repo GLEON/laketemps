@@ -3,6 +3,9 @@
 #'@return a character vector of valid metadata variable names for all lakes. 
 #'If lake_name is specified, only the metadata fields populated for lake_name 
 #'are returned. 
+#'@examples
+#'get_metadata_names()
+#'get_metadata_names('Victoria')
 #'@export
 get_metadata_names <- function(lake_name = NULL){
   data(gltc_metadata)

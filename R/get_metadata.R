@@ -3,15 +3,16 @@
 #'@param metadata_name a name of a metadata variable in GLTC dataset (optional)
 #'@return list with metadata (if metadata_name == NULL) or value if 
 #'metadata_name is specified
+#'@examples
+#'get_metadata('Victoria','Sampling depth')
+#'get_metadata('Mendota')
 #'@export
 get_metadata <- function(lake_name, metadata_name = NULL){
   check_lake(lake_name)
   data(gltc_metadata)
-  if (is.null(metadata_name)){
-    metadata <- gltc_metadata[[lake_name]]
-  } else {
-    metadata <- gltc_metadata[[lake_name]][[metadata_name]]
-  }
-  
+  metadata <- gltc_metadata[[lake_name]][[1]]
+  if (!is.null(metadata_name)){
+    metadata <- metadata[[metadata_name]]
+  } 
   return(metadata)
 }

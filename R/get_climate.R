@@ -3,6 +3,9 @@
 #'@param type name for the climate data.
 #'@return a lake data.frame, or NULL if no data exist
 #'@export
+#'@examples
+#'get_climate_names()
+#'get_climate('Victoria', 'SWdown_Summer')
 get_climate <- function(lake_name, type){
   
   data(gltc_climate)
