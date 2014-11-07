@@ -3,7 +3,7 @@
 \alias{get_metadata}
 \title{get metadata for a lake in GLTC dataset}
 \usage{
-get_metadata(lines, delim, row_names, lake_names)
+get_metadata(lake_name, metadata_name = NULL)
 }
 \arguments{
 \item{lake_name}{a name of a lake in GLTC dataset}
