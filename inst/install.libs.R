@@ -107,12 +107,13 @@ get_metadata <- function(lines, delim, row_names, lake_names){
   for (i in 1:length(lake_names)){
     m_data <- data[, i]
     na_i <- is.na(m_data) | m_data == '' | m_data == ' '
-    m_data <- m_data[!na_i]
-    lst <- list(m_data)
+    m_data[na_i] <- NA
+    df_data = matrix(m_data, nrow=1)
+    df <- as.data.frame(df_data)
 
-    names(lst[[1]]) <- m_names[!na_i]
+    colnames(df) <- make.names(m_names)
     
-    metadata[[i]] <- lst
+    metadata[[i]] <- df
   }
 
   return(metadata)
