@@ -11,4 +11,7 @@ a character vector of valid climate variable names
 \description{
 get climate data names in GLTC dataset
 }
+\examples{
+get_climate_names()
+}
 

@@ -3,7 +3,7 @@
 \alias{get_surface_temps}
 \title{get summer surface lake temperature data from GLTC dataset}
 \usage{
-get_surface_temps(lake_name, type = "in_situ")
+get_surface_temps(lake_name, type)
 }
 \arguments{
 \item{lake_name}{a valid name of a lake in the GLTC database}
@@ -15,5 +15,9 @@ a lake data.frame, or NULL if no data exist
 }
 \description{
 get summer surface lake temperature data from GLTC dataset
+}
+\examples{
+get_surface_temps('Victoria','satellite')
+get_surface_temps('Mendota','in_situ')
 }
 

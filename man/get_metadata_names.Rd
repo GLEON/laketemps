@@ -16,4 +16,8 @@ are returned.
 \description{
 get metadata names in GLTC dataset
 }
+\examples{
+get_metadata_names()
+get_metadata_names('Victoria')
+}
 

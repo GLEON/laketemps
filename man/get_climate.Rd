@@ -16,4 +16,8 @@ a lake data.frame, or NULL if no data exist
 \description{
 get climate data according to lake name from GLTC dataset
 }
+\examples{
+get_climate_names()
+get_climate('Victoria', 'SWdown_Summer')
+}
 

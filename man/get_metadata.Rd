@@ -17,4 +17,8 @@ metadata_name is specified
 \description{
 get metadata for a lake in GLTC dataset
 }
+\examples{
+get_metadata('Victoria','Sampling depth')
+get_metadata('Mendota')
+}
 

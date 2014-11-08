@@ -11,4 +11,7 @@ a character vector of valid lake names
 \description{
 get lake names in GLTC dataset
 }
+\examples{
+get_lake_names()
+}
 
