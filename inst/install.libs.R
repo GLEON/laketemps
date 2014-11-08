@@ -35,13 +35,13 @@ build_lake_list <- function(situ_time, situ_data, sat_time, sat_data, lake_names
     u_i <- !is.na(situ_temps)
 
     if (any(u_i)){
-      lake_data[[i]]$surface_temps$in_situ <- list('temperature' = situ_temps[u_i], 'year' = situ_time[u_i])
+      lake_data[[i]]$surface_temps$in_situ <- list('year' = situ_time[u_i], 'temperature' = situ_temps[u_i])
     }
     
     sat_temps <- sat_data[, i]
     u_i <- !is.na(sat_temps)
     if (any(u_i)){
-      lake_data[[i]]$surface_temps$satellite <- list('temperature' = sat_temps[u_i], 'year' = sat_time[u_i])
+      lake_data[[i]]$surface_temps$satellite <- list('year' = sat_time[u_i], 'temperature' = sat_temps[u_i])
     }
     
   }
