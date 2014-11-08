@@ -109,7 +109,7 @@ get_metadata <- function(lines, delim, row_names, lake_names){
     na_i <- is.na(m_data) | m_data == '' | m_data == ' '
     m_data[na_i] <- NA
     df_data = matrix(m_data, nrow=1)
-    df <- as.data.frame(df_data)
+    df <- as.data.frame(df_data, stringsAsFactors = FALSE)
 
     colnames(df) <- make.names(m_names)
     
