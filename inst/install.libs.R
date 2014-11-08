@@ -94,12 +94,17 @@ get_metadata <- function(lines, delim, row_names, lake_names){
   names(metadata) <- lake_names
   data = matrix(nrow = length(lines), ncol = ncol)
   m_names <- vector(length = length(lines))
+  is_num <- vector(length= length(lines))
   for (j in 1:length(lines)){
     vals <- str_split(lines[j], delim)[[1]][-2:-1]
     na_i <- vals =='NA' | vals == '' | vals == ' '
     vals[na_i] <- NA
-    num_vals <- tryCatch(as.numeric(vals[!na_i]),warning=function(w) return(vals[!na_i]))
-    vals[!na_i] <- num_vals
+    is_num[j] <- tryCatch({
+      as.numeric(vals[!na_i])
+      TRUE
+      },
+    warning=function(w) {return(FALSE)
+                         })
 
     data[j, ] <- vals # this goes back to strings...
     # here should try numeric...
@@ -112,9 +117,9 @@ get_metadata <- function(lines, delim, row_names, lake_names){
     m_data[na_i] <- NA
     df_data = matrix(m_data, nrow=1)
     df <- as.data.frame(df_data, stringsAsFactors = FALSE)
-
+    df[is_num] <- as.numeric(df[is_num])
     colnames(df) <- make.names(m_names)
-    
+   
     metadata[[i]] <- df
   }
 
