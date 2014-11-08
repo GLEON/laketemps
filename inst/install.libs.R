@@ -96,10 +96,12 @@ get_metadata <- function(lines, delim, row_names, lake_names){
   m_names <- vector(length = length(lines))
   for (j in 1:length(lines)){
     vals <- str_split(lines[j], delim)[[1]][-2:-1]
-    na_i <- vals =='NA' | vals == ''
+    na_i <- vals =='NA' | vals == '' | vals == ' '
     vals[na_i] <- NA
-    vals[!na_i] <- vals[!na_i]
-    data[j, ] <- vals
+    num_vals <- tryCatch(as.numeric(vals[!na_i]),warning=function(w) return(vals[!na_i]))
+    vals[!na_i] <- num_vals
+
+    data[j, ] <- vals # this goes back to strings...
     # here should try numeric...
     m_names[j] <- str_split(lines[j], delim)[[1]][2]
   }
