@@ -65,9 +65,10 @@ build_climate <- function(lines, delim, row_names, lake_names){
                    "CRU Annual Tmean 1C","CRU WINTER Tmean 1C","CRU 3 month Tmin 1C","CRU Annual Tmin 1C",
                    "CRU WINTER Tmin 1C","CRU 3 month DTR 1C","CRU Annual DTR 1C","CRU WINTER DTR 1C")
   for (j in 1:length(lake_names)){
-    lst <- vector('list', length = length(match_names))
-    names(lst) <- match_names
-    lake_data[[j]] <- lst
+    vc <- matrix(ncol = (length(match_names)+1), nrow = 1)
+    df <- data.frame(vc)
+    names(df) <- c('time', match_names)
+    lake_data[[j]] <- df
   }
   for (i in 1:length(match_names)){
     val_name <- match_names[i]
