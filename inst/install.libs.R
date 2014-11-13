@@ -77,7 +77,7 @@ build_climate <- function(lines, delim, row_names, lake_names){
       dat_sub <- data[, k]
       u_i <- !is.na(dat_sub)
       if (any(u_i)){
-        lake_data[[k]][[val_name]] <- list('time' = time[u_i], 'value' = data[u_i, k])
+        lake_data[[k]][[val_name]] <- list('year' = time[u_i], 'value' = data[u_i, k])
       } # else stays NULL
       
     }
