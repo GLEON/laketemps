@@ -3,10 +3,10 @@
 #'@param types name for the climate data.
 #'@return a lake data.frame, or NULL if no data exist
 #'@export
-#'@import dplyr magrittr
+#'@import dplyr reshape2
 #'@examples
 #'get_climate_names()
-#'get_climate('Victoria', 'SWdown_Summer')
+#'get_climate('Victoria', types = c('SWdown_Summer', 'NCEP 3 month'))
 #'get_climate('Mendota')
 get_climate <- function(lake_name, types = 'all'){
   
@@ -17,7 +17,12 @@ get_climate <- function(lake_name, types = 'all'){
     types <- get_climate_names()
   }
   
-  df <- filter(gltc_values, variable %in% types, siteID == 2) %>% select(variable, year, value)
+  df <- filter(gltc_values, variable %in% types, siteID == 2) %>%
+    select(variable, year, value) %>% 
+    acast(year ~ variable)
+  df <- cbind(data.frame(year = as.numeric(row.names(df))), df)
+  
+  rownames(df) <- NULL
   
   if (is.null(df)){
     return(NULL)

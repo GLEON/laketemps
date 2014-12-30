@@ -18,7 +18,7 @@ get climate data according to lake name from GLTC dataset
 }
 \examples{
 get_climate_names()
-get_climate('Victoria', 'SWdown_Summer')
+get_climate('Victoria', types = c('SWdown_Summer', 'NCEP 3 month'))
 get_climate('Mendota')
 }
 
