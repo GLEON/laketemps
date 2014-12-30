@@ -6,6 +6,7 @@
 #'@examples
 #'get_metadata('Victoria','Sampling depth')
 #'get_metadata('Mendota')
+#'@import dplyr
 #'@export
 get_metadata <- function(lake_name, metadata_name = NULL){
   check_lake(lake_name)
