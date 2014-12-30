@@ -17,7 +17,7 @@ get_climate <- function(lake_name, types = 'all'){
     types <- get_climate_names()
   }
   
-  df <- filter(gltc_values, variable %in% types, siteID == 2) %>%
+  df <- filter(gltc_values, variable %in% types, siteID == get_site_ID(lake_name)) %>%
     select(variable, year, value) %>% 
     acast(year ~ variable)
   df <- cbind(data.frame(year = as.numeric(row.names(df))), df)
@@ -30,4 +30,9 @@ get_climate <- function(lake_name, types = 'all'){
     return(df)
   }
   
+}
+
+get_site_ID <- function(lake_name){
+  siteID <- get_metadata(lake_name, 'siteID')
+  return(siteID)
 }

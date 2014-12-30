@@ -17,7 +17,7 @@ a lake data.frame, or NULL if no data exist
 get summer surface lake temperature data from GLTC dataset
 }
 \examples{
-get_surface_temps('Victoria','satellite')
-get_surface_temps('Mendota','in_situ')
+get_surface_temps('Victoria','Satellite')
+get_surface_temps('Mendota','In situ')
 }
 
