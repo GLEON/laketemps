@@ -10,7 +10,8 @@
 get_metadata <- function(lake_name, metadata_name = NULL){
   check_lake(lake_name)
   data(gltc_metadata)
-  metadata <- gltc_metadata[[lake_name]]
+  
+  metadata <- filter(gltc_metadata, Lake.name == lake_name)
   if (!is.null(metadata_name)){
     metadata <- metadata[[metadata_name]]
   } 

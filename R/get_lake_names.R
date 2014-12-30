@@ -5,5 +5,10 @@
 #'@export
 get_lake_names <- function(){
   data(gltc_metadata)
-  return(names(gltc_temperature))
+  lake_names <- gltc_metadata$Lake.name
+  
+  if (length(lake_names) != length(unique(lake_names))){
+    stop('not all lake names are unique.')
+  }
+  return(lake_names)
 }

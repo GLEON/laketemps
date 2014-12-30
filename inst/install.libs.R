@@ -1,6 +1,6 @@
 infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-ntl/10001/1/6e52deaa45c1695e7742c923ba04d16b" 
 infile1 <- sub("^https","http",infile1) 
-ts_data <-read.csv(infile1, 
+gltc_values <-read.csv(infile1, 
                    ,skip=1
                    ,sep=","  
                    , col.names=c(
@@ -14,7 +14,7 @@ ts_data <-read.csv(infile1,
 
 infile2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-ntl/10001/1/6167b9938e8dc99e9ee75251c70776a9" 
 infile2 <- sub("^https","http",infile2) 
-meta_data <-read.csv(infile2, 
+gltc_metadata <-read.csv(infile2, 
                      ,skip=1
                      ,sep=","  
                      ,quot='"' 
@@ -39,7 +39,7 @@ meta_data <-read.csv(infile2,
                      stringsAsFactors = FALSE)
 
 
-save(meta_data, file = '~/Documents/R/laketemps/data/gltc_metadata.rda', compress = TRUE)
-save(ts_data, file = '~/Documents/R/laketemps/data/gltc_values.rda', compress = TRUE)
+save(gltc_metadata, file = '~/Documents/R/laketemps/data/gltc_metadata.rda', compress = TRUE)
+save(gltc_values, file = '~/Documents/R/laketemps/data/gltc_values.rda', compress = TRUE)
 
 
