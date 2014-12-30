@@ -4,6 +4,6 @@
 #'get_lake_names()
 #'@export
 get_lake_names <- function(){
-  data(gltc_temperature)
+  data(gltc_metadata)
   return(names(gltc_temperature))
 }
