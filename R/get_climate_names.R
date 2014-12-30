@@ -4,8 +4,12 @@
 #'get_climate_names()
 #'@export
 get_climate_names <- function(){
-  data(gltc_climate)
+  skip_names <- c("Satellite","In situ")
+  data(gltc_values)
   
-  climate_vars <- names(gltc_climate[[1]])
+  
+  val_names <- unique(gltc_values$variable)
+  
+  climate_vars <- val_names[!val_names %in% skip_names]
   return(climate_vars)
 }
