@@ -3,12 +3,12 @@
 \alias{get_climate}
 \title{get climate data according to lake name from GLTC dataset}
 \usage{
-get_climate(lake_name, types = "all")
+get_climate(lake_name, types)
 }
 \arguments{
 \item{lake_name}{a valid name of a lake in the GLTC dataset}
 
-\item{types}{name for the climate data.}
+\item{types}{name for the climate data. All returned if missing.}
 }
 \value{
 a lake data.frame, or NULL if no data exist
