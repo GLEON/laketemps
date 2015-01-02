@@ -8,7 +8,7 @@ get_surface_temps(lake_name, type)
 \arguments{
 \item{lake_name}{a valid name of a lake in the GLTC database}
 
-\item{type}{source for the data. Either "in_situ" or "satellite".}
+\item{type}{source for the data. Either "In situ" or "Satellite".}
 }
 \value{
 a lake data.frame, or NULL if no data exist
