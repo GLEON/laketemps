@@ -21,4 +21,7 @@ get_climate_names()
 get_climate('Victoria', types = c('SWdown_Summer', 'NCEP 3 month'))
 get_climate('Mendota')
 }
+\seealso{
+\code{\link{get_climate_names}}, \code{\link{get_surface_temps}}
+}
 

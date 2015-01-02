@@ -4,6 +4,7 @@
 #'@return a lake data.frame, or NULL if no data exist
 #'@export
 #'@import dplyr reshape2
+#'@seealso \code{\link{get_climate_names}}, \code{\link{get_surface_temps}}
 #'@examples
 #'get_climate_names()
 #'get_climate('Victoria', types = c('SWdown_Summer', 'NCEP 3 month'))

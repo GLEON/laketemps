@@ -3,7 +3,7 @@
 \alias{get_metadata}
 \title{get metadata for a lake in GLTC dataset}
 \usage{
-get_metadata(lake_name, metadata_name = NULL)
+get_metadata(lake_name, metadata_name)
 }
 \arguments{
 \item{lake_name}{a name of a lake in GLTC dataset}
@@ -11,7 +11,7 @@ get_metadata(lake_name, metadata_name = NULL)
 \item{metadata_name}{a name of a metadata variable in GLTC dataset (optional)}
 }
 \value{
-list with metadata (if metadata_name == NULL) or value if
+list with metadata (if metadata_name is missing) or value if
 metadata_name is specified
 }
 \description{
@@ -20,5 +20,9 @@ get metadata for a lake in GLTC dataset
 \examples{
 get_metadata('Victoria','Sampling depth')
 get_metadata('Mendota')
+get_metadata("Toolik..JJA.",c('location','source'))
+}
+\seealso{
+\code{\link{get_metadata_names}}, \code{\link{get_lake_names}}, \code{\link{get_climate_names}}
 }
 

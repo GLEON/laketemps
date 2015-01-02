@@ -20,4 +20,7 @@ get metadata names in GLTC dataset
 get_metadata_names()
 get_metadata_names('Victoria')
 }
+\seealso{
+\code{\link{get_metadata}}, \code{\link{get_climate_names}}, \code{\link{get_lake_names}},
+}
 
