@@ -16,6 +16,7 @@ Depends:
     R (>= 3.0),
 Imports:
     dplyr,
-    magrittr
+    magrittr,
+    reshape2
 LazyLoad: yes
 LazyData: yes
