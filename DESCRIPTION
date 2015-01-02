@@ -15,6 +15,8 @@ Copyright: This software is in the public domain because it contains materials
 Depends:
     R (>= 3.0),
 Imports:
-    stringr
+    dplyr,
+    magrittr,
+    reshape2
 LazyLoad: yes
 LazyData: yes

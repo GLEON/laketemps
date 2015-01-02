@@ -3,38 +3,26 @@
 #'@param types name for the climate data.
 #'@return a lake data.frame, or NULL if no data exist
 #'@export
+#'@import dplyr reshape2
 #'@examples
 #'get_climate_names()
-#'get_climate('Victoria', 'SWdown_Summer')
+#'get_climate('Victoria', types = c('SWdown_Summer', 'NCEP 3 month'))
 #'get_climate('Mendota')
 get_climate <- function(lake_name, types = 'all'){
   
-  data(gltc_climate)
+  data(gltc_values)
   check_lake(lake_name)
   
   if (types[1] == "all" & length(types)==1){
     types <- get_climate_names()
   }
   
-  time_un <- c()
+  df <- filter(gltc_values, variable %in% types, siteID == get_site_ID(lake_name)) %>%
+    select(variable, year, value) %>% 
+    acast(year ~ variable)
+  df <- cbind(data.frame(year = as.numeric(row.names(df))), df)
   
-  for (i in 1:length(types)){
-    time_un <- unique(c(time_un, gltc_climate[[lake_name]][[types[i]]][[1]]))
-  }
-  df <- data.frame(x = time_un)
-  names(df) <- names(gltc_climate[[lake_name]][[types[1]]][1])
-  fau_vec <- vector('numeric',nrow(df))*NA
-  
-  for (i in 1:length(types)){
-    df_bnd <- data.frame(x=fau_vec)
-    colnames(df_bnd) <- make.names(types[i])
-    time <- gltc_climate[[lake_name]][[types[i]]][[1]]
-    u_i <- which(df[,1] %in% time)
-    df_bnd[u_i, ] <- gltc_climate[[lake_name]][[types[i]]][[2]]
-    df <- cbind(df,df_bnd)
-    
-  }
-  
+  rownames(df) <- NULL
   
   if (is.null(df)){
     return(NULL)
@@ -42,4 +30,9 @@ get_climate <- function(lake_name, types = 'all'){
     return(df)
   }
   
+}
+
+get_site_ID <- function(lake_name){
+  siteID <- get_metadata(lake_name, 'siteID')
+  return(siteID)
 }
