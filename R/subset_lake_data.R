@@ -12,6 +12,7 @@ subset_lake_data = function(lake_name, types){
     df <- cbind(data.frame(year = as.numeric(row.names(df))), df)
     
     rownames(df) <- NULL
+    df
   }, error = function(e) {
     return(NULL)
   })
