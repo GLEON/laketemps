@@ -4,5 +4,5 @@ get_site_ID <- function(lake_name){
 }
 
 temp_types = function(){
-  return(c('Satellite','In situ'))
+  return(c('Satellite','In.situ'))
 }
