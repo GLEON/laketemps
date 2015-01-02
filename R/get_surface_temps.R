@@ -5,7 +5,7 @@
 #'@seealso \code{\link{get_lake_names}}, \code{\link{get_climate}}
 #'@examples
 #'get_surface_temps('Victoria','Satellite')
-#'get_surface_temps('Mendota','In situ')
+#'get_surface_temps('Mendota','In.situ')
 #'# retrieve from a lake site with multiple surface temperature sources:
 #'get_surface_temps('Tahoe.Mid.Lake')
 #'@export

@@ -20,7 +20,7 @@ get metadata for a lake in GLTC dataset
 \examples{
 get_metadata('Victoria','Sampling depth')
 get_metadata('Mendota')
-get_metadata("Toolik..JJA.",c('location','source'))
+get_metadata("Toolik.JJA",c('location','source'))
 }
 \seealso{
 \code{\link{get_metadata_names}}, \code{\link{get_lake_names}}, \code{\link{get_climate_names}}

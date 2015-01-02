@@ -7,7 +7,7 @@
 #'@examples
 #'get_metadata('Victoria','Sampling depth')
 #'get_metadata('Mendota')
-#'get_metadata("Toolik..JJA.",c('location','source'))
+#'get_metadata("Toolik.JJA",c('location','source'))
 #'@import dplyr
 #'@export
 get_metadata <- function(lake_name, metadata_name){

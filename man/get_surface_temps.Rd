@@ -18,7 +18,7 @@ get summer surface lake temperature data from GLTC dataset
 }
 \examples{
 get_surface_temps('Victoria','Satellite')
-get_surface_temps('Mendota','In situ')
+get_surface_temps('Mendota','In.situ')
 # retrieve from a lake site with multiple surface temperature sources:
 get_surface_temps('Tahoe.Mid.Lake')
 }
