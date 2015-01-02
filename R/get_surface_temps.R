@@ -8,7 +8,14 @@
 #'@export
 get_surface_temps <- function(lake_name, type){
   
-  if (!type %in% c('Satellite','In situ')){stop(paste0('type=', type, ' not recognized'))}
+  both = temp_types()
+  
+  if (missing(type)){
+    type = both
+  }
+  
+  if (!all(type %in% both)){stop(paste0('type=', type, ' not recognized'))}
+  
   data(gltc_values)
   check_lake(lake_name)
   
@@ -28,4 +35,8 @@ get_surface_temps <- function(lake_name, type){
     return(as.data.frame(surf_temps))
   }
   
+}
+
+temp_types = function(){
+  return(c('Satellite','In situ'))
 }
