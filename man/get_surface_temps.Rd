@@ -8,7 +8,7 @@ get_surface_temps(lake_name, type)
 \arguments{
 \item{lake_name}{a valid name of a lake in the GLTC database}
 
-\item{type}{source for the data. Either "in_situ" or "satellite".}
+\item{type}{source for the data. Either "In situ" or "Satellite".}
 }
 \value{
 a lake data.frame, or NULL if no data exist
@@ -18,6 +18,11 @@ get summer surface lake temperature data from GLTC dataset
 }
 \examples{
 get_surface_temps('Victoria','Satellite')
-get_surface_temps('Mendota','In situ')
+get_surface_temps('Mendota','In.situ')
+# retrieve from a lake site with multiple surface temperature sources:
+get_surface_temps('Tahoe.Mid.Lake')
+}
+\seealso{
+\code{\link{get_lake_names}}, \code{\link{get_climate}}
 }
 

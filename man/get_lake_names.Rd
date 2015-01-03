@@ -14,4 +14,7 @@ get lake names in GLTC dataset
 \examples{
 get_lake_names()
 }
+\seealso{
+\code{\link{get_climate_names}}, \code{\link{get_metadata_names}}
+}
 

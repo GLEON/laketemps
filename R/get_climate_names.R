@@ -1,10 +1,11 @@
 #'@title get climate data names in GLTC dataset
 #'@return a character vector of valid climate variable names
+#'@seealso \code{\link{get_climate}}, \code{\link{get_lake_names}}
 #'@examples
 #'get_climate_names()
 #'@export
 get_climate_names <- function(){
-  skip_names <- c("Satellite","In situ")
+  skip_names <- temp_types()
   data(gltc_values)
   
   
