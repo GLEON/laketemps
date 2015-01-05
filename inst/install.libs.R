@@ -67,7 +67,7 @@ pop_dot <- function(text){
 }
 gltc_metadata <- make_names(gltc_metadata, c("Lake.name"))
 gltc_values <- make_names(gltc_values, c("variable"))
-save(gltc_metadata, file = '~/Documents/R/laketemps/data/gltc_metadata.rda', compress = TRUE)
-save(gltc_values, file = '~/Documents/R/laketemps/data/gltc_values.rda', compress = TRUE)
+save(gltc_metadata, gltc_values, file = 'sysdata.rda', compress = "xz")
+
 
 

@@ -9,6 +9,7 @@
 #'get_climate_names()
 #'get_climate('Victoria', types = c('SWdown.Summer', 'NCEP.3.month'))
 #'get_climate('Mendota')
+#'get_climate('mendota','swdown.summer')
 get_climate <- function(lake_name, types){
   
   

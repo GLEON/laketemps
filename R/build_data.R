@@ -1,3 +1,3 @@
-if (file.exists('~/Documents/R/laketemps/inst/install.libs.R')){
-  source('~/Documents/R/laketemps/inst/install.libs.R')
+if (file.exists('../inst/install.libs.R')){
+  source('../inst/install.libs.R')
 }

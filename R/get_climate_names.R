@@ -5,9 +5,7 @@
 #'get_climate_names()
 #'@export
 get_climate_names <- function(){
-  skip_names <- temp_types()
-  data(gltc_values)
-  
+  skip_names <- temp_types()  
   
   val_names <- unique(gltc_values$variable)
   

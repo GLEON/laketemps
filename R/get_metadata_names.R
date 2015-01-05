@@ -1,5 +1,5 @@
 #'@title get metadata names in GLTC dataset
-#'@param lake_name
+#'@param lake_name a valid name of a lake in the GLTC dataset
 #'@return a character vector of valid metadata variable names for all lakes. 
 #'If lake_name is specified, only the metadata fields populated for lake_name 
 #'are returned. 
@@ -9,7 +9,10 @@
 #'get_metadata_names('Victoria')
 #'@export
 get_metadata_names <- function(lake_name = NULL){
-  data(gltc_metadata)
+  
+  # -- fix for R CMD check 'no visible binding for global variable'
+  siteID <- "_private"
+  # -- fix for R CMD check 'no visible binding for global variable'
   
   if (is.null(lake_name)){
     metadata_vars <- names(gltc_metadata)
