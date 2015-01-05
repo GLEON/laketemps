@@ -10,6 +10,10 @@
 #'@export
 get_metadata_names <- function(lake_name = NULL){
   
+  # -- fix for R CMD check 'no visible binding for global variable'
+  siteID <- "_private"
+  # -- fix for R CMD check 'no visible binding for global variable'
+  
   if (is.null(lake_name)){
     metadata_vars <- names(gltc_metadata)
   } else {

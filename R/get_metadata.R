@@ -12,6 +12,10 @@
 #'@export
 get_metadata <- function(lake_name, metadata_name){
   
+  # -- fix for R CMD check 'no visible binding for global variable'
+  Lake.name <- "_private"
+  # -- fix for R CMD check 'no visible binding for global variable'
+  
   if (missing(lake_name)){
     lake_name <- get_lake_names()
   } else {
