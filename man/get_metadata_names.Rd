@@ -6,7 +6,7 @@
 get_metadata_names(lake_name = NULL)
 }
 \arguments{
-\item{lake_name}{}
+\item{lake_name}{a valid name of a lake in the GLTC dataset}
 }
 \value{
 a character vector of valid metadata variable names for all lakes.

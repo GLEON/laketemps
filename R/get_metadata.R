@@ -11,8 +11,12 @@
 #'@import dplyr
 #'@export
 get_metadata <- function(lake_name, metadata_name){
-  check_lake(lake_name)
-  data(gltc_metadata)
+  
+  if (missing(lake_name)){
+    lake_name <- get_lake_names()
+  } else {
+    check_lake(lake_name)
+  }
   
   if (missing(metadata_name)){
     metadata_name <- get_metadata_names(lake_name)
