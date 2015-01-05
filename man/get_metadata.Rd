@@ -18,8 +18,9 @@ metadata_name is specified
 get metadata for a lake in GLTC dataset
 }
 \examples{
-get_metadata('Victoria','Sampling depth')
+get_metadata('Victoria','Sampling.depth')
 get_metadata('Mendota')
+get_metadata('mendota','sampling.depth')
 get_metadata("Toolik.JJA",c('location','source'))
 }
 \seealso{
