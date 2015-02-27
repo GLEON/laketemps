@@ -4,6 +4,7 @@
 #'If lake_name is specified, only the metadata fields populated for lake_name 
 #'are returned. 
 #'@seealso \code{\link{get_metadata}}, \code{\link{get_climate_names}}, \code{\link{get_lake_names}},
+#'@importFrom dplyr filter 
 #'@examples
 #'get_metadata_names()
 #'get_metadata_names('Victoria')
@@ -23,5 +24,5 @@ get_metadata_names <- function(lake_name = NULL){
     metadata_vars <- colnames(data[,u_i])
   }
 
-  return(metadata_vars)
+  return(unique(metadata_vars))
 }

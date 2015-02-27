@@ -1,7 +1,7 @@
 #'@title get metadata for a lake in GLTC dataset
 #'@param lake_name a name of a lake in GLTC dataset
 #'@param metadata_name a name of a metadata variable in GLTC dataset (optional)
-#'@return list with metadata (if metadata_name is missing) or value if 
+#'@return data.frame with metadata (if metadata_name is missing) or value if 
 #'metadata_name is specified
 #'@seealso \code{\link{get_metadata_names}}, \code{\link{get_lake_names}}, \code{\link{get_climate_names}}
 #'@examples
@@ -9,7 +9,7 @@
 #'get_metadata('Mendota')
 #'get_metadata('mendota','sampling.depth')
 #'get_metadata("Toolik.JJA",c('location','source'))
-#'@import dplyr
+#'@importFrom dplyr filter
 #'@export
 get_metadata <- function(lake_name, metadata_name){
   
