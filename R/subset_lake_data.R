@@ -26,6 +26,6 @@ subset_lake_data = function(lake_name, types){
   }, error = function(e) {
     return(df)
   })
-
+  if (nrow(df) == 0) df = data.frame()
   return(df)
 }

@@ -4,19 +4,22 @@
 \alias{get_climate_names}
 \title{get climate data names in GLTC dataset}
 \usage{
-get_climate_names(lake_name = NULL)
+get_climate_names(lake_name)
 }
 \arguments{
-\item{lake_name}{a valid name of a lake in the GLTC database}
+\item{lake_name}{a valid name of a lake in the GLTC dataset (see \code{\link{get_lake_names}}).}
 }
 \value{
 a character vector of valid climate variable names
 }
 \description{
-get climate data names in GLTC dataset
+get climate names for the Global Lake Temperature Collaboration dataset.
+If a \code{lake_name} is used, only names of climate drivers that exist for that lake will be returned.
+If no \code{lake_name} is specified, all climate driver names for the entire dataset will be returned.
 }
 \examples{
 get_climate_names()
+get_climate_names('Victoria')
 }
 \seealso{
 \code{\link{get_climate}}, \code{\link{get_lake_names}}

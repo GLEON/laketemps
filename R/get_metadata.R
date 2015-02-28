@@ -1,8 +1,13 @@
 #'@title get metadata for a lake in GLTC dataset
-#'@param lake_name a name of a lake in GLTC dataset
-#'@param metadata_name a name of a metadata variable in GLTC dataset (optional)
-#'@return data.frame with metadata (if metadata_name is missing) or value if 
-#'metadata_name is specified
+#'@description Find associated metadata for a lake from the Global Lake Temperature Collaboration dataset. 
+#'See associated publication and references therein for details including units and data provenance.
+#'@param lake_name a valid name of a lake in the GLTC dataset (see \code{\link{get_lake_names}}). 
+#'\code{lake_name} is case insensitive.
+#'@param metadata_name a name of a metadata variable in GLTC dataset 
+#'(optional; see \code{\link{get_metadata_names}}). 
+#'\code{metadata_name} is case insensitive.
+#'@return data.frame with metadata (if \code{metadata_name} is missing) or the value of that metadata field if 
+#'\code{metadata_name} is specified
 #'@seealso \code{\link{get_metadata_names}}, \code{\link{get_lake_names}}, \code{\link{get_climate_names}}
 #'@examples
 #'get_metadata('Victoria','Sampling.depth')

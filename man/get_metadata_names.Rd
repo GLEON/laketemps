@@ -7,15 +7,17 @@
 get_metadata_names(lake_name = NULL)
 }
 \arguments{
-\item{lake_name}{a valid name of a lake in the GLTC dataset}
+\item{lake_name}{a valid name of a lake in the GLTC dataset (see \code{\link{get_lake_names}}).}
 }
 \value{
 a character vector of valid metadata variable names for all lakes.
-If lake_name is specified, only the metadata fields populated for lake_name
+If \code{lake_name} is specified, only the metadata fields populated for \code{lake_name}
 are returned.
 }
 \description{
-get metadata names in GLTC dataset
+Lake metadata records were compiled for the Global Lake Temperature
+Collaboration and can be accessed and returned as data.frames.
+See associated publication and references therein for details.
 }
 \examples{
 get_metadata_names()

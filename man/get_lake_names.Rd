@@ -7,10 +7,13 @@
 get_lake_names()
 }
 \value{
-a character vector of valid lake names
+a character vector of valid lake names from
+the Global Lake Temperature Collaboration dataset.
 }
 \description{
-get lake names in GLTC dataset
+Lake names that are part of the Global Lake Temperature Collaboration can be
+accessed and returned. See associated publication and references therein for
+details including units and data provenance.
 }
 \examples{
 get_lake_names()
