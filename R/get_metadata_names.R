@@ -1,9 +1,13 @@
 #'@title get metadata names in GLTC dataset
-#'@param lake_name a valid name of a lake in the GLTC dataset
+#'@description Lake metadata records were compiled for the Global Lake Temperature 
+#'Collaboration and can be accessed and returned as data.frames. 
+#'See associated publication and references therein for details.
+#'@param lake_name a valid name of a lake in the GLTC dataset (see \code{\link{get_lake_names}}).
 #'@return a character vector of valid metadata variable names for all lakes. 
-#'If lake_name is specified, only the metadata fields populated for lake_name 
+#'If \code{lake_name} is specified, only the metadata fields populated for \code{lake_name} 
 #'are returned. 
 #'@seealso \code{\link{get_metadata}}, \code{\link{get_climate_names}}, \code{\link{get_lake_names}},
+#'@importFrom dplyr filter 
 #'@examples
 #'get_metadata_names()
 #'get_metadata_names('Victoria')
@@ -23,5 +27,5 @@ get_metadata_names <- function(lake_name = NULL){
     metadata_vars <- colnames(data[,u_i])
   }
 
-  return(metadata_vars)
+  return(unique(metadata_vars))
 }

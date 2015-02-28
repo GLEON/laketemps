@@ -1,9 +1,7 @@
-infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-ntl/10001/1/6e52deaa45c1695e7742c923ba04d16b" 
+infile1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-ntl/10001/3/6e52deaa45c1695e7742c923ba04d16b" 
 infile1 <- sub("^https","http",infile1) 
 gltc_values <-read.csv(infile1, 
-                   ,skip=1
-                   ,sep=","  
-                   , col.names=c(
+                       col.names=c(
                      "recordID",     
                      "variable",     
                      "year",     
@@ -12,11 +10,9 @@ gltc_values <-read.csv(infile1,
                    stringsAsFactors = FALSE)
 
 
-infile2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-ntl/10001/1/6167b9938e8dc99e9ee75251c70776a9" 
+infile2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-ntl/10001/3/6167b9938e8dc99e9ee75251c70776a9"
 infile2 <- sub("^https","http",infile2) 
 gltc_metadata <-read.csv(infile2, 
-                     ,skip=1
-                     ,sep=","  
                      ,quot='"' 
                      , col.names=c(
                        "siteID",     
@@ -26,16 +22,18 @@ gltc_metadata <-read.csv(infile2,
                        "location",     
                        "region",     
                        "latitude",     
-                       "longitude",     
+                       "longitude", 
+                       "geospatial.accuracy.km",
                        "elevation.m",     
                        "mean.depth.m",     
                        "max.depth.m",     
                        "surface.area.km2",     
                        "volume.km3",     
                        "source",     
-                       "sampling.depth",     
+                       "sampling.depth",  
+                       "sampling.time",
                        "time.period",     
-                       "contributor"    ), check.names=TRUE,
+                       "contributor"), check.names=TRUE,
                      stringsAsFactors = FALSE)
 
 
