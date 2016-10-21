@@ -25,7 +25,6 @@ Lake temperature data package for [Global Lake Temperature Collaboration Project
 
 `get_surface_temps('Mendota','Lake.Temp.Summer.InSitu')`
 
-`get_surface_temps()
 
 # References
 
