@@ -23,7 +23,7 @@
 #'Schultz, Tracey; Silow, Eugene; Straile, Dietmar; Teubner, Katrin; Verburg, Piet; Voutilainen, Ari; Watkinson, Andrew;
 #'Weyhenmeyer, Gesa; Williamson, Craig; Woo, Kara (2014): Globally distributed lake surface water temperatures collected in
 #'situ and by satellites; 1985-2009. Long Term Ecological Research Network.
-#'http://dx.doi.org/10.6073/pasta/379a6cebee50119df2575c469aba19c5
+#'https://doi.org/10.6073/pasta/379a6cebee50119df2575c469aba19c5
 #'@examples
 #'get_climate_names()
 #'get_climate('Victoria', types = c('Radiation.Shortwave.Summer', 'Air.Temp.Mean.Summer.NCEP'))
